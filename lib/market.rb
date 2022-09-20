@@ -1,10 +1,12 @@
 class Market
   attr_reader :name,
-              :vendors
+              :vendors,
+              :date
 
   def initialize(name)
     @name = name
     @vendors = []
+    @date = Date.today.strftime "%d/%m/%Y".to_s
   end
 
   def add_vendor(vendor)
@@ -57,4 +59,9 @@ class Market
     end
     items
   end
+
+  # def sell(item, amount)
+  #   @vendors.each do |vendor, inventory|
+  #     if inventory[item] != 0
+  # end
 end
